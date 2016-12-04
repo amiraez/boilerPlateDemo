@@ -45,6 +45,7 @@
         @include('includes.partials.logged-in-as')
 
         <div class="wrapper">
+
             @include('backend.includes.header')
             @include('backend.includes.sidebar')
 
@@ -64,8 +65,12 @@
                     @yield('content')
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
-
+                @role('Adminstrator'  )
             @include('backend.includes.footer')
+            @endauth
+                @roles(['Executive'  , 'User' , 'SuperUser'] )
+            <h1 > you can't see this section if you are not Admin </h1>
+          @endauth
         </div><!-- ./wrapper -->
 
         <!-- JavaScripts -->
