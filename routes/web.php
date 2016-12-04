@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Global Routes
  * Routes that are used between both frontend and backend
@@ -7,7 +8,7 @@
 
 // Switch between the included languages
 Route::get('lang/{lang}', 'LanguageController@swap');
-
+Route::post('create', 'articleController@create') ;
 
 /* ----------------------------------------------------------------------- */
 
@@ -17,11 +18,17 @@ Route::get('lang/{lang}', 'LanguageController@swap');
  */
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
 
-	includeRouteFiles(__DIR__ . '/Frontend/');
+    includeRouteFiles(__DIR__ . '/Frontend/');
 
     Route::get('test', function(){
         return view('localizationTest') ;
     });
+
+    Route::get('create', function(){
+        return view('article') ;
+    });
+
+
 });
 
 /* ----------------------------------------------------------------------- */

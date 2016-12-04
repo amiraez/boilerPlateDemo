@@ -185,6 +185,7 @@ return [
 		HieuLe\Active\ActiveServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		Yajra\Datatables\DatatablesServiceProvider::class,
+        Dimsav\Translatable\TranslatableServiceProvider::class,
 
 		/*
 		 * Has to override the Collective\Html\HtmlServiceProvider form singleton
